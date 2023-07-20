@@ -35,4 +35,22 @@ if after the parenthesis we put number as type, the return true will give us an 
 
 */
 
+const getHello = (s: string): string => {
+    return "";
+};
 
+const heroes = ["Flash", "Batman", "Superman", "Aquaman"]; /*<- this switch the call later to be infered as a string*/
+//const heroes = [1, 2, 3, 4, 5]; /*<- this switch the call later to be infered as a number*/
+
+
+heroes.map((hero): string => {
+    return `hero is ${hero}`;
+});
+
+function consoleError(errmsg: string): void{
+    console.log(errmsg);
+}
+
+function handleError(errmsg: string): never{
+    throw new Error(errmsg);
+}
