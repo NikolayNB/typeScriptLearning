@@ -8,7 +8,20 @@ interface User {
     getCoupon(cuouponname: string, value: number): number;
 };
 
-const niko: User = {dbID: 1, name: 'Niko', id: 0, 
+//interfaces can be extended or re-opened with new values, types can't, for example:
+
+interface User {
+    githubToken: string;
+};
+
+//inheritance is also possible:
+
+interface Admin extends User {
+    role: "admin" | "superadmin" | "owner";
+};
+
+
+const niko: Admin = {dbID: 1, name: 'Niko', id: 0, githubToken: "github", role: "owner", 
     startTrial: () => {
         return 'Trial started';
     },
